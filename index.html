@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Advanced Image Gallery</h1>
+        <div class="controls">
+            <button id="addImagesBtn" class="btn primary">
+                <i class="fas fa-plus"></i> Add Images
+            </button>
+            <button id="addVideosBtn" class="btn secondary">
+                <i class="fas fa-video"></i> Add Videos
+            </button>
+            <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
+        </div>
+    </header>
+
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="people">People</button>
+        <button class="filter-btn" data-filter="videos">Videos</button>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery" id="gallery">
+            <!-- Images will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <video id="lightbox-video" controls style="display: none;">
+                <source src="" type="video/mp4">
+            </video>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+        </div>
+        <div class="filter-controls">
+            <button class="filter-control" data-filter="grayscale">Grayscale</button>
+            <button class="filter-control" data-filter="sepia">Sepia</button>
+            <button class="filter-control" data-filter="blur">Blur</button>
+            <button class="filter-control" data-filter="brightness">Brightness</button>
+            <button class="filter-control" data-filter="contrast">Contrast</button>
+            <button class="filter-control" data-filter="none">Original</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
